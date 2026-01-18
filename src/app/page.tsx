@@ -42,9 +42,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) border-b ${scrolled
-        ? 'bg-white/90 backdrop-blur-md border-slate-100 py-3'
-        : 'bg-transparent border-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) border-b ${scrolled
+        ? 'bg-white/90 backdrop-blur-md border-slate-100 py-4 md:py-3'
+        : 'bg-transparent border-transparent py-4 md:py-5'
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -207,16 +207,16 @@ const TrustBar = () => {
 
   return (
     <div className="bg-slate-900 border-b border-white/5 relative z-20 shadow-2xl">
-      <div className="container mx-auto px-6 py-10">
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-6 py-6 md:py-10">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {badges.map((badge, idx) => (
-            <div key={idx} className="flex items-center space-x-4 justify-center md:justify-start">
-              <div className="bg-white/5 p-4 rounded-full border border-white/10">
-                <badge.icon className="w-8 h-8 text-secondary" />
+            <div key={idx} className="flex items-center space-x-4 justify-start md:justify-start bg-white/5 md:bg-transparent p-4 md:p-0 rounded-2xl md:rounded-none">
+              <div className="bg-white/5 p-3 md:p-4 rounded-full border border-white/10 shrink-0">
+                <badge.icon className="w-6 h-6 md:w-8 md:h-8 text-secondary" />
               </div>
               <div>
-                <h3 className="font-bold text-white text-xl mb-1">{badge.text}</h3>
-                <p className="text-slate-400">{badge.sub}</p>
+                <h3 className="font-bold text-white text-lg md:text-xl mb-1">{badge.text}</h3>
+                <p className="text-slate-400 text-sm">{badge.sub}</p>
               </div>
             </div>
           ))}
@@ -228,9 +228,9 @@ const TrustBar = () => {
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-12 md:py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <Image
@@ -241,23 +241,25 @@ const About = () => {
                 className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="absolute -bottom-10 -right-10 bg-white p-6 rounded-xl shadow-xl z-20 hidden md:block border-l-4 border-secondary max-w-xs">
-              <p className="font-bold text-primary text-xl mb-2">"We treat your home like our own."</p>
-              <p className="text-gray-500 text-sm">- John Founder, CEO</p>
+            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-white p-4 md:p-6 rounded-xl shadow-xl z-20 hidden md:block border-l-4 border-secondary max-w-xs">
+              <p className="font-bold text-primary text-lg md:text-xl mb-2">"We treat your home like our own."</p>
+              <p className="text-gray-500 text-xs md:text-sm">- John Founder, CEO</p>
             </div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary/10 rounded-full blur-2xl -z-0"></div>
+            <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 bg-secondary/10 rounded-full blur-2xl -z-0"></div>
           </div>
 
-          <div>
-            <h2 className="text-secondary font-bold tracking-wider mb-2">ABOUT OUR COMPANY</h2>
-            <h3 className="text-4xl font-bold text-primary mb-6">Local Experts You Can Rely On</h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              For over 15 years, Elite Roofing has been the backbone of safe homes in Metro City.
-              We are a family-owned business dedicated to delivering superior craftsmanship using only the highest quality materials.
-              We don't just fix roofs; we build lasting peace of mind.
-            </p>
+          <div className="space-y-6 md:space-y-8">
+            <div>
+              <h2 className="text-secondary font-bold tracking-wider mb-2 text-sm uppercase">About Our Company</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-6">Local Experts You Can Rely On</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed text-base md:text-lg">
+                For over 15 years, Elite Roofing has been the backbone of safe homes in Metro City.
+                We are a family-owned business dedicated to delivering superior craftsmanship using only the highest quality materials.
+                We don't just fix roofs; we build lasting peace of mind.
+              </p>
+            </div>
 
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
               {[
                 "Locally Owned & Operated",
                 "CertainTeed ShingleMaster™ Certified",
@@ -266,12 +268,12 @@ const About = () => {
               ].map((item, i) => (
                 <li key={i} className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="font-medium text-primary">{item}</span>
+                  <span className="font-medium text-primary text-sm md:text-base">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <button className="text-secondary font-bold hover:text-secondary-hover inline-flex items-center gap-2 group">
+            <button className="text-secondary font-bold hover:text-secondary-hover inline-flex items-center gap-2 group text-base md:text-lg">
               Learn More About Us <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -292,35 +294,35 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-12 md:py-24 bg-white relative overflow-hidden">
       {/* Decorative Background Blobs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-secondary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-50/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-3 block">Our Services</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Comprehensive Roofing Solutions</h2>
-          <p className="text-slate-500 text-lg leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4 md:mb-6">Comprehensive Roofing Solutions</h2>
+          <p className="text-slate-500 text-base md:text-lg leading-relaxed">
             From minor patches to major installations, our certified team handles it all with precision and care.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="group bg-white border border-slate-100 p-8 rounded-3xl hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+              className="group bg-white border border-slate-100 p-6 md:p-8 rounded-3xl hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
             >
               {/* Hover Gradient Border Effect */}
               <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10`}>
-                <service.icon className="w-7 h-7 text-white" />
+              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10`}>
+                <service.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
               </div>
 
-              <h4 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors">{service.title}</h4>
-              <p className="text-slate-500 leading-relaxed mb-6">{service.desc}</p>
+              <h4 className="text-lg md:text-xl font-bold text-slate-800 mb-2 md:mb-3 group-hover:text-primary transition-colors">{service.title}</h4>
+              <p className="text-slate-500 leading-relaxed text-sm md:text-base mb-4 md:mb-6">{service.desc}</p>
 
               <div className={`flex items-center text-sm font-bold ${service.text} transition-colors cursor-pointer group-hover:underline decoration-2 underline-offset-4`}>
                 <span>Learn More</span>
@@ -336,18 +338,18 @@ const Services = () => {
 
 const Stats = () => {
   return (
-    <section className="bg-primary py-16 text-white">
+    <section className="bg-primary py-12 md:py-16 text-white">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 text-center divide-x-0 md:divide-x divide-white/10">
           {[
             { label: "Years Experience", value: "15+" },
             { label: "Projects Completed", value: "3,500+" },
             { label: "Happy Clients", value: "100%" },
             { label: "Warranty Years", value: "50" },
           ].map((stat, idx) => (
-            <div key={idx} className="p-4">
-              <p className="text-4xl md:text-5xl font-bold text-secondary mb-2">{stat.value}</p>
-              <p className="text-white/80 font-medium">{stat.label}</p>
+            <div key={idx} className="p-4 flex flex-col items-center">
+              <p className="text-3xl md:text-5xl font-bold text-secondary mb-2">{stat.value}</p>
+              <p className="text-white/80 font-medium text-sm md:text-base">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -358,79 +360,79 @@ const Stats = () => {
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-12 md:py-24 bg-white relative">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
 
-          <div className="order-2 lg:order-1 space-y-8">
+          <div className="order-2 lg:order-1 space-y-6 md:space-y-8">
             <div>
               <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-3 block">Why Choose EliteRoofing</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">We Build Roofs That <br /><span className="text-primary">Last a Lifetime</span></h2>
-              <p className="mt-4 text-slate-500 text-lg leading-relaxed">
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">We Build Roofs That <br /><span className="text-primary">Last a Lifetime</span></h2>
+              <p className="mt-4 text-slate-500 text-base md:text-lg leading-relaxed">
                 Experience peace of mind with our certified experts. We don't just fix roofs; we protect your biggest investment with precision and integrity.
               </p>
             </div>
 
-            <div className="grid gap-8">
+            <div className="grid gap-6 md:gap-8">
               {[
                 { title: "On-Time, Every Time", desc: "Your time is valuable. We stick to strict schedules to ensure your project is completed on deadline, no excuses.", icon: Clock },
                 { title: "Transparent Pricing", desc: "Detailed, itemized quotes with zero hidden fees. You'll know exactly where every dollar goes.", icon: Wallet },
                 { title: "Premium Materials", desc: "We are certified installers for top brands like GAF and Owens Corning, ensuring maximum durability.", icon: ShieldCheck },
               ].map((item, i) => (
-                <div key={i} className="flex gap-6 group">
+                <div key={i} className="flex gap-4 md:gap-6 group">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                      <item.icon className="w-7 h-7 text-secondary group-hover:text-white transition-colors" />
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-50 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                      <item.icon className="w-6 h-6 md:w-7 md:h-7 text-secondary group-hover:text-white transition-colors" />
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-secondary transition-colors">{item.title}</h4>
-                    <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 group-hover:text-secondary transition-colors">{item.title}</h4>
+                    <p className="text-slate-500 text-sm md:text-base leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className="bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/30 hover:bg-secondary hover:shadow-secondary/30 transition-all duration-300 flex items-center gap-2 group">
+            <button className="w-full md:w-auto bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/30 hover:bg-secondary hover:shadow-secondary/30 transition-all duration-300 flex items-center justify-center gap-2 group">
               Schedule Your Free Inspection
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           <div className="order-1 lg:order-2 relative">
-            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+            <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white">
               <Image
                 src="/why-choose-us.png"
                 alt="Professional Roofing Team"
                 width={800}
                 height={600}
-                className="object-cover w-full h-[600px] hover:scale-105 transition-transform duration-700"
+                className="object-cover w-full h-[350px] md:h-[600px] hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
 
               {/* Floating Badge */}
-              <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-xl max-w-xs border border-white/50 animate-fade-in-up">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="bg-green-100 p-2 rounded-full">
-                    <ShieldCheck className="w-6 h-6 text-green-600" />
+              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-xl max-w-[250px] md:max-w-xs border border-white/50 animate-fade-in-up">
+                <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
+                  <div className="bg-green-100 p-1.5 md:p-2 rounded-full">
+                    <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
                   </div>
-                  <span className="font-bold text-slate-800">Certified Excellence</span>
+                  <span className="font-bold text-slate-800 text-sm md:text-base">Certified Excellence</span>
                 </div>
-                <p className="text-sm text-slate-500 leading-snug">
+                <p className="text-xs md:text-sm text-slate-500 leading-snug">
                   "The quality of their work is unmatched. Best roofing experience I've ever had."
                 </p>
-                <div className="mt-3 flex items-center gap-2">
+                <div className="mt-2 md:mt-3 flex items-center gap-2">
                   <div className="flex text-amber-400">
-                    {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3 fill-current" />)}
+                    {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-2.5 h-2.5 md:w-3 md:h-3 fill-current" />)}
                   </div>
-                  <span className="text-xs text-slate-400 font-semibold">— Sarah Mitchell, Homeowner</span>
+                  <span className="text-[10px] md:text-xs text-slate-400 font-semibold">— Sarah Mitchell</span>
                 </div>
               </div>
             </div>
 
             {/* Decorative Background Elements */}
-            <div className="absolute -z-10 top-10 -right-10 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob"></div>
-            <div className="absolute -z-10 -bottom-10 -left-10 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000"></div>
+            <div className="absolute -z-10 top-10 -right-10 w-48 h-48 md:w-64 md:h-64 bg-orange-100 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob"></div>
+            <div className="absolute -z-10 -bottom-10 -left-10 w-48 h-48 md:w-64 md:h-64 bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000"></div>
           </div>
 
         </div>
