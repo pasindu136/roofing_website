@@ -148,9 +148,9 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent bottom-0 h-32" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-32 md:pt-24">
+      <div className="container mx-auto px-6 relative z-10 pt-32 md:pt-24 flex flex-col items-center md:items-start text-center md:text-left">
         <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div className="bg-white/10 inline-flex items-center gap-2 px-4 md:px-6 py-2 rounded-full border border-white/20 mb-6 md:mb-8 backdrop-blur-md shadow-lg">
+          <div className="bg-white/10 inline-flex items-center gap-2 px-4 md:px-6 py-2 rounded-full border border-white/20 mb-6 md:mb-8 backdrop-blur-md shadow-lg mx-auto md:mx-0">
             <Star className="w-4 h-4 md:w-5 md:h-5 text-secondary fill-secondary" />
             <span className="text-white font-bold text-xs md:text-sm tracking-widest uppercase">#1 Rated in Metro City</span>
           </div>
@@ -160,11 +160,11 @@ const Hero = () => {
             With <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-300">Elite Standards</span>
           </h1>
 
-          <p className="text-lg md:text-2xl text-slate-200 mb-8 md:mb-12 leading-relaxed font-light max-w-2xl drop-shadow-md border-l-4 border-secondary pl-6">
+          <p className="text-lg md:text-2xl text-slate-200 mb-8 md:mb-12 leading-relaxed font-light max-w-2xl drop-shadow-md border-l-0 md:border-l-4 border-secondary pl-0 md:pl-6 mx-auto md:mx-0">
             The most trusted licensed & insured roofing experts. We deliver lifetime durability, premium materials, and 5-star craftsmanship.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center md:justify-start">
             <button className="group bg-secondary hover:bg-orange-600 text-white text-lg px-8 md:px-10 py-4 md:py-5 rounded-lg font-bold transition-all transform hover:-translate-y-1 shadow-2xl hover:shadow-orange-500/25 flex items-center justify-center gap-3">
               <Ruler className="w-6 h-6" />
               Get Free Estimate
@@ -176,7 +176,7 @@ const Hero = () => {
             </button>
           </div>
 
-          <div className="mt-16 flex items-center gap-6 text-slate-300 text-sm font-medium border-t border-white/10 pt-8">
+          <div className="mt-16 flex flex-col md:flex-row items-center gap-6 text-slate-300 text-sm font-medium border-t border-white/10 pt-8 justify-center md:justify-start">
             <div className="flex -space-x-4">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="w-12 h-12 rounded-full border-2 border-primary bg-slate-800 relative overflow-hidden">
@@ -186,7 +186,7 @@ const Hero = () => {
               <div className="w-12 h-12 rounded-full border-2 border-primary bg-secondary flex items-center justify-center text-white text-xs font-bold shadow-lg">2k+</div>
             </div>
             <div>
-              <div className="flex gap-1 mb-1">
+              <div className="flex gap-1 mb-1 justify-center md:justify-start">
                 {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-4 h-4 text-secondary fill-secondary" />)}
               </div>
               <p>Trusted by <span className="text-white font-bold">2,000+ homeowners</span> this year</p>
@@ -210,7 +210,7 @@ const TrustBar = () => {
       <div className="container mx-auto px-6 py-6 md:py-10">
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {badges.map((badge, idx) => (
-            <div key={idx} className="flex items-center space-x-4 justify-start md:justify-start bg-white/5 md:bg-transparent p-4 md:p-0 rounded-2xl md:rounded-none">
+            <div key={idx} className="flex flex-col md:flex-row items-center space-x-0 md:space-x-4 space-y-3 md:space-y-0 justify-center md:justify-start bg-white/5 md:bg-transparent p-4 md:p-0 rounded-2xl md:rounded-none text-center md:text-left">
               <div className="bg-white/5 p-3 md:p-4 rounded-full border border-white/10 shrink-0">
                 <badge.icon className="w-6 h-6 md:w-8 md:h-8 text-secondary" />
               </div>
@@ -228,7 +228,7 @@ const TrustBar = () => {
 
 const About = () => {
   return (
-    <section id="about" className="py-12 md:py-20 bg-gray-50">
+    <section id="about" className="py-12 md:py-20 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="relative">
@@ -241,25 +241,25 @@ const About = () => {
                 className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-white p-4 md:p-6 rounded-xl shadow-xl z-20 hidden md:block border-l-4 border-secondary max-w-xs">
+            <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-white p-4 md:p-6 rounded-xl shadow-xl z-20 hidden md:block border-l-4 border-secondary max-w-xs text-left">
               <p className="font-bold text-primary text-lg md:text-xl mb-2">"We treat your home like our own."</p>
               <p className="text-gray-500 text-xs md:text-sm">- John Founder, CEO</p>
             </div>
             <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 bg-secondary/10 rounded-full blur-2xl -z-0"></div>
           </div>
 
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-6 md:space-y-8 text-center md:text-left">
             <div>
               <h2 className="text-secondary font-bold tracking-wider mb-2 text-sm uppercase">About Our Company</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-6">Local Experts You Can Rely On</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-base md:text-lg">
+              <p className="text-gray-600 mb-6 leading-relaxed text-base md:text-lg max-w-2xl mx-auto md:mx-0">
                 For over 15 years, Elite Roofing has been the backbone of safe homes in Metro City.
                 We are a family-owned business dedicated to delivering superior craftsmanship using only the highest quality materials.
                 We don't just fix roofs; we build lasting peace of mind.
               </p>
             </div>
 
-            <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+            <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 inline-block md:block text-left">
               {[
                 "Locally Owned & Operated",
                 "CertainTeed ShingleMaster™ Certified",
@@ -273,9 +273,11 @@ const About = () => {
               ))}
             </ul>
 
-            <button className="text-secondary font-bold hover:text-secondary-hover inline-flex items-center gap-2 group text-base md:text-lg">
-              Learn More About Us <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="flex justify-center md:justify-start">
+              <button className="text-secondary font-bold hover:text-secondary-hover inline-flex items-center gap-2 group text-base md:text-lg">
+                Learn More About Us <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -360,20 +362,20 @@ const Stats = () => {
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-12 md:py-24 bg-white relative">
+    <section className="py-12 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
 
-          <div className="order-2 lg:order-1 space-y-6 md:space-y-8">
+          <div className="order-2 lg:order-1 space-y-6 md:space-y-8 text-center md:text-left">
             <div>
               <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-3 block">Why Choose EliteRoofing</span>
               <h2 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">We Build Roofs That <br /><span className="text-primary">Last a Lifetime</span></h2>
-              <p className="mt-4 text-slate-500 text-base md:text-lg leading-relaxed">
+              <p className="mt-4 text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
                 Experience peace of mind with our certified experts. We don't just fix roofs; we protect your biggest investment with precision and integrity.
               </p>
             </div>
 
-            <div className="grid gap-6 md:gap-8">
+            <div className="grid gap-6 md:gap-8 text-left">
               {[
                 { title: "On-Time, Every Time", desc: "Your time is valuable. We stick to strict schedules to ensure your project is completed on deadline, no excuses.", icon: Clock },
                 { title: "Transparent Pricing", desc: "Detailed, itemized quotes with zero hidden fees. You'll know exactly where every dollar goes.", icon: Wallet },
@@ -393,7 +395,7 @@ const WhyChooseUs = () => {
               ))}
             </div>
 
-            <button className="w-full md:w-auto bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/30 hover:bg-secondary hover:shadow-secondary/30 transition-all duration-300 flex items-center justify-center gap-2 group">
+            <button className="w-full md:w-auto bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-primary/30 hover:bg-secondary hover:shadow-secondary/30 transition-all duration-300 flex items-center justify-center gap-2 group mx-auto md:mx-0">
               Schedule Your Free Inspection
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -452,10 +454,10 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-          <div className="max-w-xl">
-            <h2 className="text-secondary font-bold tracking-wider mb-2">OUR WORK</h2>
-            <h3 className="text-4xl font-bold text-primary">Featured Projects</h3>
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-12 text-center md:text-left">
+          <div className="max-w-xl mb-6 md:mb-0">
+            <h2 className="text-secondary font-bold tracking-wider mb-2 text-sm uppercase">OUR WORK</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-primary">Featured Projects</h3>
           </div>
           <button className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-secondary transition-colors">
             View Full Portfolio <ArrowRight className="w-5 h-5" />
