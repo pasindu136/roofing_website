@@ -148,24 +148,24 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent bottom-0 h-32" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-24">
+      <div className="container mx-auto px-6 relative z-10 pt-32 md:pt-24">
         <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div className="bg-white/10 inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/20 mb-8 backdrop-blur-md shadow-lg">
-            <Star className="w-5 h-5 text-secondary fill-secondary" />
-            <span className="text-white font-bold text-sm tracking-widest uppercase">#1 Rated in Metro City</span>
+          <div className="bg-white/10 inline-flex items-center gap-2 px-4 md:px-6 py-2 rounded-full border border-white/20 mb-6 md:mb-8 backdrop-blur-md shadow-lg">
+            <Star className="w-4 h-4 md:w-5 md:h-5 text-secondary fill-secondary" />
+            <span className="text-white font-bold text-xs md:text-sm tracking-widest uppercase">#1 Rated in Metro City</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-2xl">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 md:mb-8 leading-tight md:leading-[1.1] tracking-tight drop-shadow-2xl">
             Protect Your Home <br />
             With <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-300">Elite Standards</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed font-light max-w-2xl drop-shadow-md border-l-4 border-secondary pl-6">
+          <p className="text-lg md:text-2xl text-slate-200 mb-8 md:mb-12 leading-relaxed font-light max-w-2xl drop-shadow-md border-l-4 border-secondary pl-6">
             The most trusted licensed & insured roofing experts. We deliver lifetime durability, premium materials, and 5-star craftsmanship.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-5">
-            <button className="group bg-secondary hover:bg-orange-600 text-white text-lg px-10 py-5 rounded-lg font-bold transition-all transform hover:-translate-y-1 shadow-2xl hover:shadow-orange-500/25 flex items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
+            <button className="group bg-secondary hover:bg-orange-600 text-white text-lg px-8 md:px-10 py-4 md:py-5 rounded-lg font-bold transition-all transform hover:-translate-y-1 shadow-2xl hover:shadow-orange-500/25 flex items-center justify-center gap-3">
               <Ruler className="w-6 h-6" />
               Get Free Estimate
               <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -605,7 +605,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
+          <div className="bg-white p-6 md:p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
