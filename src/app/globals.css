@@ -13,6 +13,12 @@ body {
   background: rgb(var(--background-start-rgb));
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  /* Adjust based on navbar height */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

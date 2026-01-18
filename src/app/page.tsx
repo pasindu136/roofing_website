@@ -89,7 +89,7 @@ const Navbar = () => {
           >
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-              <span>(555) 123-4567</span>
+              <span>Call Now</span>
             </div>
           </a>
         </div>
@@ -540,6 +540,115 @@ const Testimonials = () => {
   );
 };
 
+const Contact = () => {
+  return (
+    <section id="contact" className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-3 block">Get In Touch</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">We're Here to Help</h2>
+          <p className="text-slate-500 text-lg">
+            Have a question or ready to start your roofing project? Reach out to us today for a free consultation.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Contact Info & Map */}
+          <div className="flex flex-col gap-6 h-full">
+            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+              <div className="grid gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-secondary">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400 font-bold uppercase tracking-wider">Call Us 24/7</p>
+                    <p className="text-xl font-bold text-slate-900">(555) 123-4567</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-secondary">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400 font-bold uppercase tracking-wider">Email Us</p>
+                    <p className="text-xl font-bold text-slate-900">info@eliteroofing.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-secondary">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400 font-bold uppercase tracking-wider">Headquarters</p>
+                    <p className="text-xl font-bold text-slate-900">123 Roof Street, Metro City, ST 12345</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="flex-grow w-full bg-slate-100 rounded-3xl overflow-hidden shadow-lg border border-slate-200 relative min-h-[300px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12690.627725969894!2d-122.04944883477144!3d37.33230588647008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80850c95a2f584bd%3A0x6b2e3f895521e102!2sApple%20Campus!5e0!3m2!1sen!2sus!4v1709848293842!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="filter grayscale hover:grayscale-0 transition-all duration-500 absolute inset-0"
+              />
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">First Name</label>
+                  <input type="text" placeholder="John" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">Last Name</label>
+                  <input type="text" placeholder="Doe" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-700">Email Address</label>
+                <input type="email" placeholder="john@example.com" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all" />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-700">Service Needed</label>
+                <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all text-slate-500">
+                  <option>Roof Repair</option>
+                  <option>Full Replacement</option>
+                  <option>Inspection</option>
+                  <option>Commercial Roofing</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-700">Message</label>
+                <textarea rows={4} placeholder="Tell us about your project..." className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all resize-none"></textarea>
+              </div>
+
+              <button className="w-full bg-primary hover:bg-secondary text-white font-bold py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                <Mail className="w-5 h-5" />
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 const CTA = () => {
   return (
     <section className="py-24 bg-primary relative overflow-hidden">
@@ -569,55 +678,65 @@ const CTA = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-slate-300 py-16">
+    <footer className="bg-slate-950 text-slate-300 py-12 border-t border-slate-900 relative">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <HomeIcon className="text-secondary w-6 h-6" />
-              <span className="text-2xl font-bold text-white">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-10">
+
+          {/* Brand & Social */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-2">
+              <div className="bg-secondary p-2 rounded-lg">
+                <HomeIcon className="text-white w-6 h-6" />
+              </div>
+              <span className="text-2xl font-bold text-white tracking-tight">
                 Elite<span className="text-secondary">Roofing</span>
               </span>
             </div>
-            <p className="mb-6 opacity-80 leading-relaxed">
-              Providing top-quality roofing services to homeowners and businesses with integrity, safety, and excellence since 2008.
+            <p className="opacity-70 leading-relaxed text-sm">
+              Setting the standard for quality roofing since 2008. We protect what matters most with integrity and craftsmanship.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3 pt-2">
               {[Facebook, Twitter, Instagram].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all">
-                  <Icon className="w-5 h-5" />
+                <a key={i} href="#" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:border-secondary hover:text-white transition-all transform hover:-translate-y-1">
+                  <Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Contact */}
+          {/* Contact Info */}
           <div>
-            <h4 className="text-white font-bold text-lg mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
-                <span>123 Roofing Lane, Suite 100<br />Metro City, ST 12345</span>
+            <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
+              <span className="w-8 h-1 bg-secondary rounded-full"></span> Contact Us
+            </h4>
+            <ul className="space-y-5">
+              <li className="flex items-start gap-4">
+                <MapPin className="w-6 h-6 text-secondary flex-shrink-0" />
+                <span className="text-sm opacity-80 leading-relaxed">123 Roofing Lane, Suite 100<br />Metro City, ST 12345</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span>(555) 123-4567</span>
+              <li className="flex items-center gap-4">
+                <Phone className="w-6 h-6 text-secondary flex-shrink-0" />
+                <span className="text-sm opacity-80 font-semibold">(555) 123-4567</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span>office@eliteroofing.com</span>
+              <li className="flex items-center gap-4">
+                <Mail className="w-6 h-6 text-secondary flex-shrink-0" />
+                <span className="text-sm opacity-80">office@eliteroofing.com</span>
               </li>
             </ul>
           </div>
 
-          {/* Links */}
+          {/* Quick Links */}
           <div>
-            <h4 className="text-white font-bold text-lg mb-6">Quick Links</h4>
+            <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
+              <span className="w-8 h-1 bg-secondary rounded-full"></span> Quick Links
+            </h4>
             <ul className="space-y-3">
-              {['Home', 'About Us', 'Services', 'Projects', 'Reviews', 'Contact', 'Privacy Policy'].map((item) => (
+              {['Home', 'About Us', 'Services', 'Our Projects', 'Client Reviews', 'Contact Us'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-secondary transition-colors">{item}</a>
+                  <a href="#" className="text-sm opacity-70 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 group">
+                    <ChevronRight className="w-3 h-3 text-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="group-hover:translate-x-1 transition-transform">{item}</span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -625,11 +744,13 @@ const Footer = () => {
 
           {/* Service Area */}
           <div>
-            <h4 className="text-white font-bold text-lg mb-6">Service Area</h4>
-            <ul className="grid grid-cols-2 gap-2">
-              {['Metro City', 'Westville', 'North Hills', 'Lakeview', 'Sunnydale', 'Rivertown'].map((area) => (
-                <li key={area} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+            <h4 className="text-white font-bold text-lg mb-6 flex items-center gap-2">
+              <span className="w-8 h-1 bg-secondary rounded-full"></span> Service Areas
+            </h4>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
+              {['Metro City', 'Westville', 'North Hills', 'Lakeview', 'Sunnydale', 'Rivertown', 'Oak Park', 'Highland'].map((area) => (
+                <li key={area} className="flex items-center gap-2 text-sm opacity-70">
+                  <div className="w-1 h-1 bg-secondary rounded-full"></div>
                   {area}
                 </li>
               ))}
@@ -637,11 +758,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Elite Roofing & Home Services. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+        {/* Bottom Bar */}
+        <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center text-sm opacity-60">
+          <p>&copy; {new Date().getFullYear()} Elite Roofing & Home Services.</p>
+          <div className="flex gap-8 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
@@ -661,6 +784,7 @@ export default function Home() {
       <WhyChooseUs />
       <Gallery />
       <Testimonials />
+      <Contact />
       <CTA />
       <Footer />
     </main>
